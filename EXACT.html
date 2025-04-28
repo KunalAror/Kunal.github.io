@@ -69,32 +69,43 @@
             Implementation</a></p>
 
     <h2>Results on Different Datasets</h2>
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>Dataset</th>
-            <th>No. of Maximal Cliques</th>
-            <th>Largest Maximal Clique</th>
-            <th>Runtime</th>
-        </tr>
-        <tr>
-            <td>Enron</td>
-            <td>226859</td>
-            <td>20</td>
-            <td>1233.51s</td>
-        </tr>
-        <tr>
-            <td>Skitter</td>
-            <td>37322355</td>
-            <td>67</td>
-            <td>41924s</td>
-        </tr>
-        <tr>
-            <td>Wiki-Vote</td>
-            <td>459002</td>
-            <td>17</td>
-            <td>925.42s</td>
-        </tr>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Dataset</th>
+                <th>h-value</th>
+                <th>Densest Subgraph Size</th>
+                <th>Density</th>
+                <th>Elapsed Time (seconds)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>YEAST</td>
+                <td>3</td>
+                <td>7 vertices</td>
+                <td>3.71429</td>
+                <td>0.876854</td>
+            </tr>
+            <tr>
+                <td>AS733</td>
+                <td>3</td>
+                <td>28 vertices</td>
+                <td>31.1429</td>
+                <td>2.6101</td>
+            </tr>
+            <tr>
+                <td>Netscience</td>
+                <td>3</td>
+                <td>9 vertices</td>
+                <td>9.33333</td>
+                <td>1.23616</td>
+            </tr>
+        </tbody>
     </table>
+
+
+
 
     <!-- <h2>Visual Representations</h2>
     <p><a href="img/execution-time.png" target="_blank">Execution Time on Each Dataset</a></p> -->
