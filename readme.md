@@ -2,7 +2,7 @@
 
 ## Website
 
-The website made for this assignment can be found at - [Efficient Algorithms for Densest Subgraph Discovery](https://www.example.com)
+The website made for this assignment can be found at - [Efficient Algorithms for Densest Subgraph Discovery](https://Kunal.github.io/)
 
 ## Usage
 
