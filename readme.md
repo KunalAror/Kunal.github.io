@@ -41,3 +41,7 @@ Link to data sets:<br>
 -   (CoreExact) The Core based Exact Method - [Shivay Gupta](f20221342@hyderabad.bits-pilani.ac.in) (2022A7PS1342H), [Swapneel Singh](f20220221@hyderabad.bits-pilani.ac.in) (2022A7PS0221H), [Mohit Kohli](f20220004@hyderabad.bits-pilani.ac.in) (2022A7PS0004H), [Kunal Arora](f20221306@hyderabad.bits-pilani.ac.in) (2022A7PS1306H)
 -   Report - [Mohit Kohli](f20220004@hyderabad.bits-pilani.ac.in) (2022A7PS0004H), [Swapneel Singh](f20220221@hyderabad.bits-pilani.ac.in) (2022A7PS0221H), [Moksh Jain](f20220186@hyderabad.bits-pilani.ac.in) (2022A7PS0186H)
 -   Website - [Kunal Arora](f20221306@hyderabad.bits-pilani.ac.in) (2022A7PS1306H), [Swapneel Singh](f20220221@hyderabad.bits-pilani.ac.in) (2022A7PS0221H), [Shivay Gupta](f20221342@hyderabad.bits-pilani.ac.in) (2022A7PS1342H)
+
+## Report
+
+[report]()
