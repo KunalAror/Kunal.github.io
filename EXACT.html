@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 1 - Exact Algorithm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Exact Algorithm for Connected Dominating Set (CDS) Computation</h1>
+
+    <p><strong>Objective:</strong>The Exact algorithm computes the Connected Dominating Set (CDS) of a graph by
+        iteratively solving a maximum flow problem combined with binary search. It exploits the fundamental relationship
+        between maximum flow and minimum cut in flow networks to accurately identify the minimal CDS.
+        In this approach, the graph structure is carefully transformed into a flow network where clique structures and
+        node degrees influence the edge capacities. By setting up the problem as a sequence of flow computations with
+        gradually adjusted thresholds, the algorithm can systematically search for the smallest CDS that satisfies the
+        connectivity and domination requirements. The binary search ensures efficiency by narrowing the feasible
+        solution space in logarithmic time, while the minimum cut calculation at each step ensures that the solution
+        remains exact.
+        .Given a graph
+        𝐺
+        (𝑉
+        ,
+        𝐸
+        )
+        G(V,E) and an auxiliary structure
+        Ψ
+        (
+        𝑉
+        Ψ
+        ,
+        𝐸
+        Ψ
+        )
+        Ψ(V
+        Ψ
+        ​
+        ,E
+        Ψ
+        ​
+        ).
+        <br> The key steps of the Exact algorithm are summarized as follows:
+    <ul>
+        <li>Initializing binary search bounds <em>l</em> and <em>u</em> based on the maximum degree of vertices.</li>
+
+        <li>Identifying all (h−1)-cliques in <em>G</em> to form auxiliary nodes.</li>
+
+        <li>Building a <strong>flow network</strong> <em>F(V<sub>F</sub>, E<sub>F</sub>)</em> for each binary search
+            iteration, consisting of:
+            <ul>
+                <li>A source node <em>s</em>, sink node <em>t</em>,</li>
+                <li>Original vertices <em>V</em>,</li>
+                <li>(h−1)-cliques <em>Λ</em> as intermediate nodes.</li>
+            </ul>
+        </li>
+
+        <li>Setting edge capacities according to graph properties and candidate threshold <em>α</em>.</li>
+
+        <li>Solving a <strong>minimum s-t cut</strong> to determine the feasibility of the current solution.</li>
+
+        <li>Updating the search range based on the cut result until convergence.</li>
+    </ul>
+    </p>
+    <p><a href="https://drive.google.com/file/d/1DrJnyWfocRAPm616Zr3pxOFz0jxb83TU/view" target="_blank">Read the
+            Paper</a></p>
+    <p><a href="https://github.com/txrp0x9/txrp0x9.github.io/blob/master/chiba.cpp" target="_blank">Code
+            <!-- have to change the link of the code once uploaded -->
+            Implementation</a></p>
+
+    <h2>Results on Different Datasets</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Dataset</th>
+            <th>No. of Maximal Cliques</th>
+            <th>Largest Maximal Clique</th>
+            <th>Runtime</th>
+        </tr>
+        <tr>
+            <td>Enron</td>
+            <td>226859</td>
+            <td>20</td>
+            <td>1233.51s</td>
+        </tr>
+        <tr>
+            <td>Skitter</td>
+            <td>37322355</td>
+            <td>67</td>
+            <td>41924s</td>
+        </tr>
+        <tr>
+            <td>Wiki-Vote</td>
+            <td>459002</td>
+            <td>17</td>
+            <td>925.42s</td>
+        </tr>
+    </table>
+
+    <!-- <h2>Visual Representations</h2>
+    <p><a href="img/execution-time.png" target="_blank">Execution Time on Each Dataset</a></p> -->
+
+</body>
+
+</html>

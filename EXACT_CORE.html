@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm 2 - Exact Core</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Listing All Maximal Cliques in Sparse Graphs</h1>
+
+    <p><strong>Objective:</strong> The CoreExact algorithm enhances the Exact method by significantly reducing its
+        computational cost. It uses core decomposition and pruning techniques to focus on smaller, denser subgraphs,
+        rather than recalculating flow networks for the entire graph during every binary search iteration. By working
+        within (k, Ψ)-cores, CoreExact efficiently narrows down the search to parts of the graph where the Connected
+        Dominating Set (CDS) is likely to be, drastically reducing unnecessary computations.
+
+        Additionally, CoreExact tightens the bounds on the search parameter α, which reduces the number of binary search
+        iterations needed to find the CDS. As the search progresses, the algorithm gradually works with smaller and more
+        relevant subgraphs, minimizing the cost of maximum flow computations and improving scalability. These
+        optimizations allow CoreExact to compute the CDS with significantly less time and computational effort than the
+        Exact algorithm, making it more practical for larger graphs.
+    <ul>
+        <li><strong>Tighter bounds on α</strong>: By analyzing (k, Ψ)-cores, tighter lower and upper bounds for the
+            search parameter α are computed, reducing the number of binary search iterations needed.</li>
+        <li><strong>Locating the CDS inside cores</strong>: Instead of searching the entire graph, CoreExact narrows the
+            search to specific (k, Ψ)-cores where the CDS is guaranteed to exist, based on the graph's clique-density
+            properties.</li>
+        <li><strong>Shrinking flow networks</strong>: As binary search progresses and α increases, CoreExact dynamically
+            switches to smaller subgraphs with higher core numbers, minimizing the size of the flow networks and thus
+            lowering the cost of minimum cut computations.</li>
+    </ul>
+    By combining these three techniques, CoreExact builds much smaller flow networks, performs fewer binary search
+    steps, and ultimately finds the exact CDS much faster than the original Exact algorithm.
+
+    Time Complexity:
+    The time complexity of CoreExact depends on the maximum size of the cores and the efficiency of minimum cut
+    computations.
+    Assuming core decomposition takes
+    <span>O(mh<sup>h-2</sup>)</span> time and that maximum flow is computed using efficient algorithms like Dinic’s
+    algorithm
+    <span>O(m<sup>n</sup>)</span>, the overall time is significantly less than Exact, especially when graphs are sparse
+    or have strong core
+    structures.
+    </p>
+    <p><a href="https://drive.google.com/file/d/1DrJnyWfocRAPm616Zr3pxOFz0jxb83TU/view" target="_blank">Read the
+            Paper</a></p>
+    <p><a href="https://github.com/txrp0x9/txrp0x9.github.io/blob/master/els.cpp" target="_blank">Code
+            Implementation</a></p>
+
+    <h2>Results on Different Datasets</h2>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Dataset</th>
+            <th>No. of Maximal Cliques</th>
+            <th>Largest Maximal Clique</th>
+            <th>Runtime</th>
+        </tr>
+        <tr>
+            <td>Enron</td>
+            <td>226859</td>
+            <td>20</td>
+            <td>9.60033 seconds</td>
+        </tr>
+        <tr>
+            <td>Skitter</td>
+            <td>37322355</td>
+            <td>67</td>
+            <td>6210.09 seconds</td>
+        </tr>
+        <tr>
+            <td>Wiki-Vote</td>
+            <td>459002</td>
+            <td>17</td>
+            <td>13.1521 seconds</td>
+        </tr>
+    </table>
+
+    <!-- <h2>Visual Representations</h2>
+    <p><a href="img/execution-time.png" target="_blank">Execution Time on Each Dataset</a></p> -->
+
+</body>
+
+</html>
